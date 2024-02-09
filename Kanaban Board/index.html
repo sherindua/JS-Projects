@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Kanban Board</title>
+  </head>
+  <body>
+    
+    <header>
+      <nav>
+        <button
+          type="button"
+          class="btn btn-primary create-task-btn"
+          onclick="showForm();"
+        >
+          Create Task
+        </button>
+      </nav>
+    </header>
+    <div class="form-container">
+      <div class="create-task-form">
+        <span class="close-btn" onclick="hideForm();">+</span>
+        <b><div class="task-id">Ticket ID:</div></b>
+        <div class="form-input-containers">
+          <b><label for="title">Title: </label></b>
+          <input
+            id="title"
+            class="form-inputs"
+            type="text"
+            placeholder="Enter Title Here"
+          />
+        </div>
+        <div class="form-input-containers">
+          <b><label for="description">Description: </label></b><br />
+          <textarea
+            id="description"
+            class="form-inputs"
+            placeholder="Enter Description Here"
+          ></textarea>
+        </div>
+
+        <div id="duedatepriority-flex" class="form-input-containers">
+          <div>
+            <b><label for="duedate">Due Date: </label></b>
+            <input id="duedate" class="form-inputs" type="date" />
+          </div>
+          <div>
+            <b><label for="priority">Priority: </label></b>
+            <select id="priority" class="form-inputs">
+              <option>None</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-input-containers">
+          <b><label for="status">Status: </label></b>
+          <select id="status" class="form-inputs">
+            <option class="option-todo">Todo</option>
+            <option>In-Progress</option>
+            <option>Done</option>
+          </select>
+        </div>
+        <button class="btn btn-primary create-btn">Create</button>
+      </div>
+    </div>
+    
+    <div class="tickets-container">                                          <!--flex-->
+      <!-- ticket categories   -->
+    <!-- <div class="tickets-todo-container"><h3>Todo</h3></div>              flex
+    <div class="tickets-inprogress-container"><h3>In-Progress</h3></div>      flex
+    <div class="tickets-done-container"><h3>Done</h3></div>                   flex-->
+
+    <!--single ticket -->
+      <!-- <div class="ticket-container">
+      <div class="ticket">
+        <div class="ticket-priority-color"></div>
+        <input type="text" class="ticket-title" readonly>Title</input>
+        <textarea class="ticket-desc">description here</textarea>
+        <img class="ticket-editBtn" src="./images/edit-pencil-icon-16.jpg">
+      </div>
+    </div> -->
+  </div>
+
+  <div class="edit-form-container">
+    <div class="edit-create-task-form">
+      <span class="edit-close-btn" onclick="hideEditForm();">+</span>
+      <b><div class="edit-task-id">Ticket ID:</div></b>
+      <div class="edit-form-input-containers">
+        <b><label for="edit-title">Title: </label></b>
+        <input
+          id="edit-title"
+          class="edit-form-inputs"
+          type="text"
+          placeholder="Enter Title Here"
+        />
+      </div>
+      <div class="edit-form-input-containers">
+        <b><label for="edit-description">Description: </label></b><br />
+        <textarea
+          id="edit-description"
+          class="edit-form-inputs"
+          placeholder="Enter Description Here"
+        ></textarea>
+      </div>
+
+      <div id="edit-duedatepriority-flex" class="edit-form-input-containers">
+        <div>
+          <b><label for="edit-duedate">Due Date: </label></b>
+          <input id="edit-duedate" class="edit-form-inputs" type="date" />
+        </div>
+        <div>
+          <b><label for="edit-priority">Priority: </label></b>
+          <select id="edit-priority" class="edit-form-inputs">
+            <option>None</option>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+          </select>
+        </div>
+      </div>
+      <div class="edit-form-input-containers">
+        <b><label for="edit-status">Status: </label></b>
+        <select id="edit-status" class="edit-form-inputs">
+          <option class="edit-option-todo">Todo</option>
+          <option>In-Progress</option>
+          <option>Done</option>
+        </select>
+      </div>
+      <button class="btn btn-primary edit-update-btn">Update</button>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/d0c05c4631.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
